@@ -15,7 +15,8 @@ namespace AutoFarmSlimeMission
             {
                 new RestartScene(),
                 new ReportScene(),
-                new FightEndScene(),
+                //难以检测,弃用
+                //new FightEndScene(),
                 new FightScene()
             };
         }
@@ -23,10 +24,17 @@ namespace AutoFarmSlimeMission
         {
             if (turboAttack)
             {
-                Press(new DualShockState() { Triangle = true });
-                Sleep(150);
+                System.Console.WriteLine("Start Attack!!");
+                //开始连按三分钟三角
+                for (int i = 0; i < 112; i++)
+                {
+                    Press(new DualShockState() { Triangle = true });
+                    Sleep(1600);
+                }
+                System.Console.WriteLine("Attack End!!");
+                turboAttack = false;
             }
-            HandleScenes();
+                HandleScenes(scene => { System.Console.WriteLine(scene.Name); });
         }
     }
 }

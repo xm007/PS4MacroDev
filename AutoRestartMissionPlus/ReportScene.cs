@@ -1,5 +1,4 @@
-﻿
-using PS4MacroAPI;
+﻿using PS4MacroAPI;
 
 namespace AutoRestartMissionPlus
 {

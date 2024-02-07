@@ -20,21 +20,27 @@ namespace AutoFarmSlimeMission
             Color = 0xC3C7CE
         };
 
+        public static PixelMap IsFightAgain_NO_LeftBluePixel = new PixelMap()
+        {
+            X = 495,
+            Y = 463,
+            Color = 0x59EEF9
+        };
+
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(IsFightAgain_Shi, 99) && script.MatchTemplate(IsFightAgain_QuestionMark, 99);
+            return script.MatchTemplate(IsFightAgain_Shi, 98) && script.MatchTemplate(IsFightAgain_QuestionMark, 98) && script.MatchTemplate(IsFightAgain_NO_LeftBluePixel, 98);
         }
 
         public override void OnMatched(ScriptBase script)
         {
             var _script = script as MainScript;
             _script.turboX = false;
-            _script.turboAttack = false;
             script.Sleep(150);
             script.Press(new DualShockState() { DPad_Up = true });
             script.Sleep(150);
             script.Press(new DualShockState() { Cross = true });
-            _script.turboX = true;
+            _script.turboX = false;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace AutoFarmSlimeMission
 
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(QuestStart, 96)/* && script.MatchTemplate(QuestStart_BlackPixelOnTheFloor, 99)*/;
+            return script.MatchTemplate(QuestStart, 93)/* && script.MatchTemplate(QuestStart_BlackPixelOnTheFloor, 99)*/;
         }
 
         public override void OnMatched(ScriptBase script)
