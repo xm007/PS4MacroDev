@@ -6,8 +6,12 @@ namespace AutoFarmSlimeMission
 {
     public class MainScript : ScriptBase
     {
+        public MyForm form;
         public bool turboX = true;
         public bool turboAttack = false;
+
+        public static bool IsCagliostro { get; set; }
+        public static bool IsEugen { get; set; }
         public MainScript()
         {
             Config.Name = "AutoFarmSlimeMission";
@@ -19,19 +23,41 @@ namespace AutoFarmSlimeMission
                 //new FightEndScene(),
                 new FightScene()
             };
+
+            ScriptForm = form = new MyForm();
+            form.Show();
         }
+
         public override void Update()
         {
             if (turboAttack)
             {
-                System.Console.WriteLine("Start Attack!!");
-                //开始连按三分钟三角
-                for (int i = 0; i < 112; i++)
+                if (IsEugen)
                 {
-                    Press(new DualShockState() { Triangle = true });
-                    Sleep(1600);
+                    System.Console.WriteLine("Start Fight");
+                    Press(new DualShockState() { LY = 0x0 },4000);
+                    //开始连按三分钟方框
+                    for (int i = 0; i < 202; i++)
+                    {
+                        System.Console.WriteLine(200-i);
+                        Press(new DualShockState() { Square = true });
+                        //850
+                        Sleep(600);
+                    }
                 }
-                System.Console.WriteLine("Attack End!!");
+                else if (IsCagliostro)
+                {
+                    System.Console.WriteLine("Start Fight");
+                    //开始连按三分钟三角
+                    for (int i = 0; i < 109; i++)
+                    {
+                        System.Console.WriteLine(112 - i);
+                        Press(new DualShockState() { Triangle = true });
+                        //1600
+                        Sleep(1500);
+                    }
+                }
+                System.Console.WriteLine("End Fight");
                 turboAttack = false;
             }
                 HandleScenes(scene => { System.Console.WriteLine(scene.Name); });
