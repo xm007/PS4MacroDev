@@ -22,7 +22,7 @@ namespace AutoFarmSlimeMission
 
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(IsFightAgain_Shi, 95) && script.MatchTemplate(IsFightAgain_QuestionMark, 95);
+            return script.MatchTemplate(IsFightAgain_Shi, 99) && script.MatchTemplate(IsFightAgain_QuestionMark, 99);
         }
 
         public override void OnMatched(ScriptBase script)

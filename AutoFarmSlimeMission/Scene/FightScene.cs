@@ -15,16 +15,16 @@ namespace AutoFarmSlimeMission
             Hash = 18119399714013055
         };
 
-        public static PixelMap QuestStart_BlackPixelOnTheFloor = new PixelMap()
-        {
-            X = 651,
-            Y = 628,
-            Color = 0x0B0503
-        };
+        //public static PixelMap QuestStart_BlackPixelOnTheFloor = new PixelMap()
+        //{
+        //    X = 651,
+        //    Y = 628,
+        //    Color = 0x0B0503
+        //};
 
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(QuestStart, 90) && script.MatchTemplate(QuestStart_BlackPixelOnTheFloor, 98);
+            return script.MatchTemplate(QuestStart, 96)/* && script.MatchTemplate(QuestStart_BlackPixelOnTheFloor, 99)*/;
         }
 
         public override void OnMatched(ScriptBase script)

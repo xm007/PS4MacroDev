@@ -15,18 +15,18 @@ namespace AutoFarmSlimeMission
             Hash = 5030498289062760261
         };
 
-        public static RectMap TimeUp = new RectMap() 
+        public static RectMap BattleResult = new RectMap()
         {
-            X = 382,
-            Y = 336,
-            Width = 244,
-            Height = 54,
-            Hash = 35887507611321456
+            X = 57,
+            Y = 105,
+            Width = 380,
+            Height = 35,
+            Hash = 36027695334166548
         };
 
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(ZeroOut, 85) && script.MatchTemplate(TimeUp, 85);
+            return script.MatchTemplate(ZeroOut, 95) || script.MatchTemplate(BattleResult, 90);
         }
 
         public override void OnMatched(ScriptBase script)
