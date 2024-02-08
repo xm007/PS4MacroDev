@@ -22,6 +22,13 @@ namespace AutoFarmSlimeMission
         //    Color = 0x0B0503
         //};
 
+        public static PixelMap DashIcon = new PixelMap()
+        {
+            X = 945,
+            Y = 614,
+            Color = 0x0B0503
+        };
+
         public override bool Match(ScriptBase script)
         {
             return script.MatchTemplate(QuestStart, 93)/* && script.MatchTemplate(QuestStart_BlackPixelOnTheFloor, 99)*/;
@@ -30,6 +37,7 @@ namespace AutoFarmSlimeMission
         public override void OnMatched(ScriptBase script)
         {
             var _script = script as MainScript;
+            _script.turboAttack = false;
             _script.turboAttack = true;
         }
     }

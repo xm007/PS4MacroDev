@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NextRoundScene.cs" />
     <Compile Include="ReportScene.cs" />
     <Compile Include="RestartScene.cs" />
     <Compile Include="MainScript.cs" />

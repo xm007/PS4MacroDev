@@ -19,6 +19,7 @@ namespace AutoFarmSlimeMission
             {
                 new RestartScene(),
                 new ReportScene(),
+                new NextRoundScene(),
                 //难以检测,弃用
                 //new FightEndScene(),
                 new FightScene()

@@ -12,7 +12,8 @@ namespace AutoRestartMissionPlus
             Config.Scenes = new List<Scene>()
             {
                 new RestartScene(),
-                new ReportScene()
+                new ReportScene(),
+                new NextRoundScene()
             };
         }
         public override void Update()

@@ -23,12 +23,10 @@ namespace AutoFarmSlimeMission
         public override void OnMatched(ScriptBase script)
         {
             var _script = script as MainScript;
+            _script.turboAttack = false;
             if (_script.turboX)
             {
                 script.Press(new DualShockState() { Cross = true });
-                script.Sleep(250);
-                script.Press(new DualShockState() { Cross = true });
-                script.Sleep(250);
             }
         }
     }

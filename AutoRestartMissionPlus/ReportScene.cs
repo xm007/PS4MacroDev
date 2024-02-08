@@ -26,9 +26,6 @@ namespace AutoRestartMissionPlus
             if (_script.turboX)
             {
                 script.Press(new DualShockState() { Cross = true });
-                script.Sleep(500);
-                script.Press(new DualShockState() { Cross = true });
-                script.Sleep(500);
             }
         }
     }

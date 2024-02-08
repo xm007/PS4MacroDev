@@ -29,18 +29,19 @@ namespace AutoFarmSlimeMission
 
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(IsFightAgain_Shi, 98) && script.MatchTemplate(IsFightAgain_QuestionMark, 98) && script.MatchTemplate(IsFightAgain_NO_LeftBluePixel, 98);
+            return script.MatchTemplate(IsFightAgain_Shi, 98) && script.MatchTemplate(IsFightAgain_QuestionMark, 98) && script.MatchTemplate(IsFightAgain_NO_LeftBluePixel, 90);
         }
 
         public override void OnMatched(ScriptBase script)
         {
             var _script = script as MainScript;
             _script.turboX = false;
+            _script.turboAttack = false;
             script.Sleep(150);
             script.Press(new DualShockState() { DPad_Up = true });
             script.Sleep(150);
             script.Press(new DualShockState() { Cross = true });
-            _script.turboX = false;
+            _script.turboX = true;
         }
     }
 }
