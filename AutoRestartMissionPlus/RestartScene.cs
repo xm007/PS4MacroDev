@@ -40,7 +40,7 @@ namespace AutoRestartMissionPlus
             script.Press(new DualShockState() { DPad_Up = true });
             script.Sleep(150);
             script.Press(new DualShockState() { Cross = true });
-            _script.turboX = false;
+            _script.turboX = true;
         }
     }
 }
